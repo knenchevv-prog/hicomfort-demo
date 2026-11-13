@@ -7,3 +7,5 @@ Demo concept website for HI Comfort (renovations, Varna). Not the official compa
 - `src/site.css` and `src/site.js` are the shared styles and behaviour.
 
 Bulgarian pages sit at the root, English pages under `/en/`.
+
+Preview links: Netlify builds a preview for each pull request.

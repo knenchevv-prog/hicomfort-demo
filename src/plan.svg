@@ -1,0 +1,12 @@
+<svg viewBox="0 0 438 340" role="img" aria-label="План на апартамент с шест помещения">
+        <path class="dim draw" d="M10 318H390M10 312v12M390 312v12"/>
+        <text class="dimt" x="200" y="335" text-anchor="middle">11,40 m</text>
+        <path class="dim draw" d="M404 10V290M398 10h12M398 290h12"/>
+        <text class="dimt" x="420" y="150" text-anchor="middle" transform="rotate(90 420 150)">8,40 m</text>
+        <g class="room on" data-room="hol" tabindex="0" role="button" aria-label="Хол"><rect class="draw" x="10" y="10" width="210" height="160"/><text x="24" y="36">Хол</text><text class="m2" x="24" y="52">24 m²</text></g>
+        <g class="room" data-room="kuhnya" tabindex="0" role="button" aria-label="Кухня"><rect class="draw" x="220" y="10" width="170" height="110"/><text x="234" y="36">Кухня</text><text class="m2" x="234" y="52">12 m²</text></g>
+        <g class="room" data-room="banya" tabindex="0" role="button" aria-label="Баня"><rect class="draw" x="220" y="120" width="80" height="90"/><text x="232" y="146">Баня</text><text class="m2" x="232" y="162">5 m²</text></g>
+        <g class="room" data-room="koridor" tabindex="0" role="button" aria-label="Коридор"><rect class="draw" x="300" y="120" width="90" height="90"/><text x="312" y="146">Коридор</text><text class="m2" x="312" y="162">6 m²</text></g>
+        <g class="room" data-room="spalnya" tabindex="0" role="button" aria-label="Спалня"><rect class="draw" x="10" y="170" width="210" height="120"/><text x="24" y="196">Спалня</text><text class="m2" x="24" y="212">16 m²</text></g>
+        <g class="room" data-room="terasa" tabindex="0" role="button" aria-label="Тераса"><rect class="draw" x="220" y="210" width="170" height="80"/><text x="234" y="236">Тераса</text><text class="m2" x="234" y="252">8 m²</text></g>
+      </svg>

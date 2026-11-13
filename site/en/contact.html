@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Contact · HI Comfort</title>
+<link rel="alternate" hreflang="bg" href="/kontakti.html">
+<link rel="alternate" hreflang="en" href="/en/contact.html">
+<script>(function(){try{var d=document.documentElement,t=localStorage.getItem('hc-theme');if(t)d.setAttribute('data-th',t);if(sessionStorage.getItem('hc-nav')){sessionStorage.removeItem('hc-nav');d.className+=' arrive'}}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<div class="veil boot" id="veil" aria-hidden="true">
+  <div class="veil-in">
+    <svg viewBox="0 0 40 40"><path class="vr" d="M4 20 20 6l16 14" fill="none" style="stroke:var(--glow)" stroke-width="3" stroke-linecap="square"/><g class="vl"><path d="M11 20v14M19 20v14M11 27h8M27 24v10" stroke="#fff" stroke-width="3"/><rect x="25" y="16" width="4" height="4" style="fill:var(--glow)"/></g></svg>
+    <div class="veil-name">HI COMFORT</div>
+    <div class="veil-bar"><i></i></div>
+    <div class="veil-sec" id="veil-sec">Contact</div>
+  </div>
+</div>
+
+<div class="ribbon">DEMO CONCEPT FOR HI COMFORT · prices, terms and illustrations are examples</div>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="./" data-nav="Home" aria-label="HI Comfort home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 20 20 6l16 14" fill="none" style="stroke:var(--brass)" stroke-width="3.5" stroke-linecap="square"/><path d="M11 20v14M19 20v14M11 27h8M27 24v10" style="stroke:var(--ink)" stroke-width="3.5"/><rect x="25" y="16" width="4" height="4" style="fill:var(--brass)"/></svg>
+      <span>HI COMFORT<small>RENOVATIONS · VARNA</small></span>
+    </a>
+    <nav class="main" aria-label="Main menu"><a href="services.html" data-nav="Services">Services</a><a href="projects.html" data-nav="Projects">Projects</a><a href="prices.html" data-nav="Prices">Prices</a><a href="how-we-work.html" data-nav="How we work">How we work</a><a href="faq.html" data-nav="FAQ">FAQ</a><a class="on" href="contact.html" data-nav="Contact" aria-current="page">Contact</a></nav>
+    <div class="right">
+      <a class="lang" href="../kontakti.html" data-nav="Български" lang="bg" aria-label="Български">BG</a>
+      <a class="btn small brass" href="tel:+359898643973">089 864 3973</a>
+      <button class="burger" id="burger" aria-label="Open the menu" aria-expanded="false" aria-controls="drawer"><span></span></button>
+    </div>
+  </div>
+  <div class="drawer" id="drawer"><a href="./" data-nav="Home">Home</a><a href="services.html" data-nav="Services">Services</a><a href="projects.html" data-nav="Projects">Projects</a><a href="prices.html" data-nav="Prices">Prices</a><a href="how-we-work.html" data-nav="How we work">How we work</a><a href="faq.html" data-nav="FAQ">FAQ</a><a class="on" href="contact.html" data-nav="Contact" aria-current="page">Contact</a></div>
+</header>
+
+<main>
+  <section class="contact" id="kontakt">
+    <canvas class="tape" aria-hidden="true"></canvas>
+    <div class="wrap cgrid">
+      <div class="info">
+        <p class="eyebrow">Contact</p>
+        <h1>Book a site visit.<span class="thin">We reply the same day.</span></h1>
+        <div class="row"><span class="k">Phone and Viber</span><span class="v"><a href="tel:+359898643973">089 864 3973</a></span></div>
+        <div class="row"><span class="k">Email</span><span class="v"><a href="mailto:hicomfort2016@gmail.com">hicomfort2016@gmail.com</a></span></div>
+        <div class="row"><span class="k">Address</span><span class="v">25 Tsar Asen I St, Varna</span></div>
+        <div class="row"><span class="k">Opening hours</span><span class="v">Mon–Fri 8:00–18:00 · Sat 9:00–18:00</span></div>
+        <a class="btn brass" style="justify-self:start" href="https://www.google.com/maps/search/?api=1&query=HI+Comfort+%D0%92%D0%B0%D1%80%D0%BD%D0%B0&query_place_id=ChIJrxdjM15VpEAR5QzasNsiq5w">Open in Google Maps</a>
+      </div>
+      <form id="form" novalidate>
+        <h3>Request a quote</h3>
+        <div class="f2">
+          <div><label for="f-name">Name</label><input type="text" id="f-name" autocomplete="name" required></div>
+          <div><label for="f-tel">Phone</label><input type="tel" id="f-tel" autocomplete="tel" required></div>
+        </div>
+        <div class="f2">
+          <div><label for="f-type">Type of renovation</label><select id="f-type"><option>Full renovation</option><option>Bathroom</option><option>Kitchen</option><option>Flooring</option><option>Plastering and paint</option><option>Other</option></select></div>
+          <div><label for="f-area">Size (m²)</label><input type="number" id="f-area" min="1" inputmode="numeric"></div>
+        </div>
+        <div><label for="f-msg">What would you like us to do?</label><textarea id="f-msg"></textarea></div>
+        <button class="btn brass" type="submit">Send request</button>
+        <div class="msg" id="form-msg" role="status"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>HI Comfort · full renovations and finishing works · Varna</span><span>Demo concept, not the company's official website</span></div></footer>
+
+<div class="mbar" aria-label="Quick actions">
+  <a href="tel:+359898643973">Call</a>
+  <a href="viber://chat?number=%2B359898643973">Viber</a>
+  <a class="p" href="contact.html" data-nav="Contact">Quote</a>
+</div>
+
+<div class="themes" id="themes" role="group" aria-label="Colour scheme (demo only)">
+  <span>Colour</span>
+  <button type="button" data-th="" style="--a:#B88A2C;--b:#14181C" aria-pressed="true" aria-label="Gold and graphite"></button>
+  <button type="button" data-th="midnight" style="--a:#B5975A;--b:#0B1730" aria-pressed="false" aria-label="Midnight and champagne"></button>
+  <button type="button" data-th="emerald" style="--a:#B08D4C;--b:#0E2A22" aria-pressed="false" aria-label="Emerald and brass"></button>
+  <button type="button" data-th="bordeaux" style="--a:#B9976A;--b:#2B0E17" aria-pressed="false" aria-label="Bordeaux and champagne"></button>
+  <button type="button" data-th="espresso" style="--a:#B5683F;--b:#231813" aria-pressed="false" aria-label="Espresso and copper"></button>
+  <button type="button" data-th="onyx" style="--a:#D6D6DA;--b:#111113" aria-pressed="false" aria-label="Onyx and platinum"></button>
+</div>
+
+<script>window.HC={"lang": "en", "locale": "en-GB", "dim": "11.40 m", "formMissing": "Please fill in your name and phone so we can get back to you.", "formDemo": "This is a demo and the request was not sent. On the finished site it goes straight to HI Comfort by email and Viber."};</script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

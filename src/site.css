@@ -374,3 +374,19 @@ footer a{color:#E6E8EA}
 @media (max-width:560px){.grid4{grid-template-columns:1fr}.gantt{padding:18px 14px}.gantt .row{grid-template-columns:104px 1fr;gap:10px;font-size:.82rem}}
 .nf{min-height:60vh;display:grid;place-items:center;text-align:center;padding:72px 20px}
 .nf .more{justify-content:center}
+
+/* week-by-week calendar */
+.cal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.wkc{background:var(--sheet);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 16px;display:grid;grid-template-rows:auto 1fr auto;gap:12px;min-height:150px}
+.wkc .no{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-deep)}
+.wkc ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;align-content:start;font-size:.93rem;font-weight:500;line-height:1.35}
+.wkc li{padding-left:16px;position:relative}
+.wkc li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:2px;background:var(--brass)}
+.wkc .pbar{height:4px;border-radius:2px;background:var(--line);overflow:hidden}
+.wkc .pbar i{display:block;height:100%;background:var(--brass)}
+.wkc.last{background:var(--ink);border-color:var(--ink);color:#fff}
+.wkc.last .no{color:var(--glow)}
+.wkc.last li::before,.wkc.last .pbar i{background:var(--glow)}
+.wkc.last .pbar{background:rgba(255,255,255,.18)}
+@media (max-width:900px){.cal{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.wkc{padding:14px;min-height:0}.wkc ul{font-size:.86rem}}

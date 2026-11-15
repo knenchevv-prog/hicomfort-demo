@@ -251,7 +251,7 @@ HEAD_JS = "(function(){try{var d=document.documentElement,t=localStorage.getItem
 MATERIALS = [("bath", "m-marble"), ("living", "m-oak"), ("kitchen", "m-tile"), ("bath", "m-slate"),
              ("living", "m-plaster"), ("kitchen", "m-terrazzo"), ("living", "m-sage"), ("kitchen", "m-brick")]
 LVL_RATES = [(110, 170), (260, 360), (430, 580)]
-SCENE = dict(services="routes", projects="tiles", prices="tape", process="steps", faq="plan")
+SCENE = dict(services="plan", projects="tiles", prices="tape", process="steps", faq="routes")
 
 LOGO, VLOGO, THEMES = read("logo.svg"), read("veil-logo.svg"), read("themes.html")
 
@@ -349,14 +349,17 @@ def build(lang, page):
         return f'<div class="{cls}">\n        {out}\n      </div>'
 
     def schedule():
-        wk = "".join(f"<span>{i}</span>" for i in range(1, 9))
-        rows = "\n        ".join(f'<div class="row"><span>{n}</span><div class="track" style="--n:{i}"><i style="grid-column:{a}/{b+1}"></i></div></div>' for i, (n, a, b) in enumerate(t["tl"]))
+        tiles = []
+        for w in range(1, 9):
+            tasks = "".join(f"<li>{n}</li>" for n, a, b in t["tl"] if a <= w <= b)
+            last = " last" if w == 8 else ""
+            tiles.append(f'<div class="wkc{last}"><span class="no">{t["tl_week"]} {w}</span><ul>{tasks}</ul><div class="pbar" aria-hidden="true"><i style="width:{w * 12.5}%"></i></div></div>')
+        tiles = "\n        ".join(tiles)
         return f'''<section class="sub">
     <div class="wrap">
       {head(t["tl_head"])}
-      <div class="gantt">
-        <div class="row wk"><span>{t["tl_week"]}</span><div class="track">{wk}</div></div>
-        {rows}
+      <div class="cal">
+        {tiles}
       </div>
       <p class="note">{t["tl_note"]}</p>
     </div>

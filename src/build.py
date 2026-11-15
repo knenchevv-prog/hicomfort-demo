@@ -106,6 +106,25 @@ T = {
     f_types=("Цялостен ремонт", "Баня", "Кухня", "Настилки", "Шпакловка и боя", "Друго"),
     form_missing="Попълнете име и телефон, за да можем да се свържем с Вас.",
     form_demo="Това е демо и запитването не е изпратено. В готовия сайт то пристига директно при HI Comfort по имейл и Viber.",
+    # upgrades
+    tl_head=("Примерен график", "Осем седмици.", "Основен ремонт на 65 m²."), tl_week="Седмица",
+    tl=(("Къртене и подготовка", 1, 1), ("Ел. и ВиК инсталации", 2, 3), ("Замазки и шпакловка", 3, 5), ("Баня и плочки", 4, 6),
+        ("Настилки и врати", 6, 7), ("Боядисване и довършване", 7, 8), ("Почистване и предаване", 8, 8)),
+    tl_note="Примерен график за демото. Реалните срокове се записват в офертата след огледа.",
+    need_head=("От Вас", "Три неща.", "За да върви ремонтът по график."),
+    need=(("Достъп до жилището", "Ключ и уговорка със съседите за шумните дни."),
+          ("Избор на материали навреме", "Плочки, настилки и цветове до датите в графика."),
+          ("Един човек за решения", "Един от семейството потвърждава промените, за да няма разминаване.")),
+    inc_head=("Какво включва", "Три вида ремонт.", "Сравнете ги ред по ред."), inc_first="Дейност",
+    inc=(("Шпакловка и боядисване", "yyy"), ("Дребни поправки", "yyy"), ("Нови ел. и ВиК инсталации", "nyy"), ("Замазки и изравняване", "nyy"),
+         ("Подови настилки", "nyy"), ("Баня до ключ", "nny"), ("Интериорни врати", "nny"), ("Осветление и ключове", "nny"), ("Финално почистване", "yyy")),
+    inc_note="Примерно съдържание за демото. Точният обхват се описва в офертата.", inc_yes="включено", inc_no="не е включено",
+    fac_head=("От какво зависи цената", "Четири неща.", "Затова правим оглед."),
+    fac=(("Състояние на жилището", "Стари инсталации и неравни стени искат повече труд."),
+         ("Материалите, които изберете", "Плочките и настилките имат най-голяма разлика в цената."),
+         ("Промени в разпределението", "Местене на стени, мокри помещения и изводи."),
+         ("Достъп и срок", "Етаж, асансьор и колко бързо трябва да приключим.")),
+    nf=("Страницата не е намерена", "Адресът е сгрешен или страницата е преместена.", "Към началото"),
     # floor plan + before/after
     rooms=dict(
         hol=("Хол", "24 m²", ("Шпакловка и боядисване на стени и таван", "Ламинат или паркет с первази", "Окачен таван и скрито осветление", "Интериорни врати")),
@@ -191,6 +210,24 @@ T = {
     f_types=("Full renovation", "Bathroom", "Kitchen", "Flooring", "Plastering and paint", "Other"),
     form_missing="Please fill in your name and phone so we can get back to you.",
     form_demo="This is a demo and the request was not sent. On the finished site it goes straight to HI Comfort by email and Viber.",
+    tl_head=("Sample schedule", "Eight weeks.", "A standard renovation of 65 m²."), tl_week="Week",
+    tl=(("Demolition and prep", 1, 1), ("Wiring and plumbing", 2, 3), ("Screeds and plastering", 3, 5), ("Bathroom and tiling", 4, 6),
+        ("Flooring and doors", 6, 7), ("Painting and finishing", 7, 8), ("Cleaning and handover", 8, 8)),
+    tl_note="Sample schedule for the demo. Real timings go into the quote after the site visit.",
+    need_head=("From you", "Three things.", "So the work stays on schedule."),
+    need=(("Access to the home", "A key, and a word with the neighbours about the noisy days."),
+          ("Materials chosen on time", "Tiles, flooring and colours by the dates in the schedule."),
+          ("One person for decisions", "One family member confirms changes, so nothing gets crossed.")),
+    inc_head=("What's included", "Three types of renovation.", "Compare them line by line."), inc_first="Work",
+    inc=(("Plastering and painting", "yyy"), ("Small repairs", "yyy"), ("New wiring and plumbing", "nyy"), ("Screeds and levelling", "nyy"),
+         ("Flooring", "nyy"), ("Bathroom, fully finished", "nny"), ("Interior doors", "nny"), ("Lighting and switches", "nny"), ("Final cleaning", "yyy")),
+    inc_note="Sample contents for the demo. The exact scope is set out in the quote.", inc_yes="included", inc_no="not included",
+    fac_head=("What the price depends on", "Four things.", "That's why we visit first."),
+    fac=(("The condition of the home", "Old wiring and uneven walls take more work."),
+         ("The materials you choose", "Tiles and flooring make the biggest difference to the price."),
+         ("Changes to the layout", "Moving walls, wet rooms and connection points."),
+         ("Access and deadline", "The floor, the lift and how fast we need to finish.")),
+    nf=("Page not found", "The address is wrong or the page has moved.", "Back to home"),
     rooms=dict(
         hol=("Living room", "24 m²", ("Plastering and painting walls and ceiling", "Laminate or parquet with skirting", "Suspended ceiling with hidden lighting", "Interior doors")),
         kuhnya=("Kitchen", "12 m²", ("Wiring and plumbing points for every appliance", "Splashback and floor tiles", "Walls prepared for the units")),
@@ -214,7 +251,7 @@ HEAD_JS = "(function(){try{var d=document.documentElement,t=localStorage.getItem
 MATERIALS = [("bath", "m-marble"), ("living", "m-oak"), ("kitchen", "m-tile"), ("bath", "m-slate"),
              ("living", "m-plaster"), ("kitchen", "m-terrazzo"), ("living", "m-sage"), ("kitchen", "m-brick")]
 LVL_RATES = [(110, 170), (260, 360), (430, 580)]
-SCENE = dict(services="level", projects="tiles", prices="tape", process="steps", faq="plan")
+SCENE = dict(services="plan", projects="tiles", prices="tape", process="steps", faq="routes")
 
 LOGO, VLOGO, THEMES = read("logo.svg"), read("veil-logo.svg"), read("themes.html")
 
@@ -306,6 +343,57 @@ def build(lang, page):
             else:
                 out.append(f'<div class="card"><span class="no">0{i+1}</span><h3>{h}</h3><p>{p}</p></div>')
         return "\n        ".join(out)
+
+    def cards(items, cls="grid3"):
+        out = "\n        ".join(f'<div class="card"><span class="no">0{i+1}</span><h3>{h}</h3><p>{p}</p></div>' for i, (h, p) in enumerate(items))
+        return f'<div class="{cls}">\n        {out}\n      </div>'
+
+    def schedule():
+        tiles = []
+        for w in range(1, 9):
+            tasks = "".join(f"<li>{n}</li>" for n, a, b in t["tl"] if a <= w <= b)
+            last = " last" if w == 8 else ""
+            tiles.append(f'<div class="wkc{last}"><span class="no">{t["tl_week"]} {w}</span><ul>{tasks}</ul><div class="pbar" aria-hidden="true"><i style="width:{w * 12.5}%"></i></div></div>')
+        tiles = "\n        ".join(tiles)
+        return f'''<section class="sub">
+    <div class="wrap">
+      {head(t["tl_head"])}
+      <div class="cal">
+        {tiles}
+      </div>
+      <p class="note">{t["tl_note"]}</p>
+    </div>
+  </section>
+  <section class="sub">
+    <div class="wrap">
+      {head(t["need_head"])}
+      {cards(t["need"])}
+    </div>
+  </section>'''
+
+    def included():
+        ths = "".join(f"<th scope=\"col\">{n}</th>" for n, _ in t["lvl"])
+        def cell(c):
+            return f'<td class="y" aria-label="{t["inc_yes"]}">✓</td>' if c == "y" else f'<td class="n" aria-label="{t["inc_no"]}">—</td>'
+        rows = "\n          ".join(f'<tr><td>{n}</td>{"".join(cell(c) for c in m)}</tr>' for n, m in t["inc"])
+        return f'''<section class="sub">
+    <div class="wrap">
+      {head(t["inc_head"])}
+      <div class="tbl"><table class="incl">
+        <thead><tr><th scope="col">{t["inc_first"]}</th>{ths}</tr></thead>
+        <tbody>
+          {rows}
+        </tbody>
+      </table></div>
+      <p class="note">{t["inc_note"]}</p>
+    </div>
+  </section>
+  <section class="sub">
+    <div class="wrap">
+      {head(t["fac_head"])}
+      {cards(t["fac"], "grid4")}
+    </div>
+  </section>'''
 
     hc = dict(lang=lang, locale=t["locale"], dim=t["dim"])
     extra = ""
@@ -445,6 +533,7 @@ def build(lang, page):
       </div>
     </div>
   </section>
+  {included()}
   {guarantees()}
   {band()}'''
 
@@ -458,6 +547,7 @@ def build(lang, page):
       </div>
     </div>
   </section>
+  {schedule()}
   {guarantees()}
   {band()}'''
 
@@ -588,7 +678,33 @@ def main():
             path = os.path.join(OUT, "" if lang == "bg" else "en", FILES[lang][page])
             with open(path, "w", encoding="utf-8") as fh:
                 fh.write(build(lang, page))
-    print("built", 2 * len(PAGES), "pages into", OUT)
+    b, e = T["bg"]["nf"], T["en"]["nf"]
+    with open(os.path.join(OUT, "404.html"), "w", encoding="utf-8") as fh:
+        fh.write(f'''<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>404 · HI Comfort</title>
+<script>{HEAD_JS}</script>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header><div class="wrap bar"><a class="logo" href="/" aria-label="HI Comfort">{LOGO}<span>HI COMFORT<small>{T["bg"]["logo_sub"]}</small></span></a></div></header>
+<main class="nf">
+  <div>
+    <p class="eyebrow" style="justify-content:center">404</p>
+    <h1>{b[0]}<span class="thin" lang="en">{e[0]}</span></h1>
+    <p class="lead" style="margin:16px auto 0">{b[1]} <span lang="en">{e[1]}</span></p>
+    <div class="more"><a class="btn brass" href="/">{b[2]}</a><a class="btn ghost" href="/en/" lang="en">{e[2]}</a></div>
+  </div>
+</main>
+</body>
+</html>
+''')
+    print("built", 2 * len(PAGES), "pages + 404 into", OUT)
 
 
 if __name__ == "__main__":

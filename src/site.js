@@ -118,19 +118,27 @@
       if(L>=0&&!small){x.fillStyle=gl(.8*A);x.font='10px "JetBrains Mono",monospace';x.fillText(HC.dim||'11,40 m',bx+bw/2-22,by+bh+18);
         x.strokeStyle=gl(.5*A);x.lineWidth=1;x.beginPath();x.moveTo(bx,by+bh+8);x.lineTo(bx+bw,by+bh+8);x.stroke()}
     },
-    // a spirit level: the bubble swings and settles in the middle
-    level:function(x,w,h,t){
-      var T=t/24,cyc=7.5,u=T%cyc,A=Math.min(1,u/.5),small=w<700;
-      if(u>cyc-.8)A=Math.max(0,(cyc-u)/.8);
-      var bw=small?w-48:Math.min(w*.42,520),bh=26,bx=small?24:w-bw-48,by=h-58,cx=bx+bw/2,cy=by+bh/2,vw=Math.min(150,bw*.4),i;
-      var off=Math.exp(-u*.75)*Math.cos(u*3.6),k=small?.5:1;
-      x.lineWidth=2;x.strokeStyle=gl(.5*A*k);x.strokeRect(bx,by,bw,bh);
-      x.lineWidth=1;x.beginPath();
-      for(i=bx+16;i<bx+bw-8;i+=16){if(Math.abs(i-cx)<vw/2+10)continue;x.moveTo(i,by+bh);x.lineTo(i,by+bh-6)}
-      x.stroke();
-      x.lineWidth=2;x.strokeStyle=gl(.8*A*k);x.strokeRect(cx-vw/2,by+5,vw,bh-10);
-      x.beginPath();x.moveTo(cx-15,by+5);x.lineTo(cx-15,by+bh-5);x.moveTo(cx+15,by+5);x.lineTo(cx+15,by+bh-5);x.stroke();
-      x.beginPath();x.ellipse(cx+off*(vw/2-16),cy,12,6,0,0,6.3);x.fillStyle=gl((Math.abs(off)<.04?.95:.6)*A*k);x.fill();
+    // wiring and pipe routes run across the wall and end in lit sockets
+    routes:function(x,w,h,t){
+      var small=w<700,k=small?.38:1,ax=small?w*.06:w*.46,aw=small?w*.88:w*.5,ay=18,ah=h-36,cyc=9,u=(t/24)%cyc,A=u>cyc-1?Math.max(0,cyc-u):1,i,j;
+      var P=[[[0,.82],[.22,.82],[.22,.3],[.5,.3],[.5,.12],[.96,.12]],
+             [[0,.6],[.36,.6],[.36,.9],[.72,.9],[.72,.52],[.96,.52]],
+             [[0,.38],[.12,.38],[.12,.06],[.34,.06]],
+             [[.5,.3],[.62,.3],[.62,.7],[.86,.7]]];
+      x.lineWidth=2;x.lineJoin='round';
+      for(i=0;i<P.length;i++){
+        var p=P[i],tot=0,segs=[],q=ez(Math.max(0,Math.min(1,(u-i*.9)/3.2))),L,end=null;
+        for(j=1;j<p.length;j++){var d=Math.abs(p[j][0]-p[j-1][0])*aw+Math.abs(p[j][1]-p[j-1][1])*ah;segs.push(d);tot+=d}
+        if(q<=0)continue;L=q*tot;
+        x.strokeStyle=gl((i%2?.5:.75)*A*k);x.beginPath();x.moveTo(ax+p[0][0]*aw,ay+p[0][1]*ah);
+        for(j=1;j<p.length&&L>0;j++){var f=Math.min(L/segs[j-1],1),px=ax+(p[j-1][0]+(p[j][0]-p[j-1][0])*f)*aw,py=ay+(p[j-1][1]+(p[j][1]-p[j-1][1])*f)*ah;x.lineTo(px,py);L-=segs[j-1];end=[px,py]}
+        x.stroke();
+        x.fillStyle=gl(.9*A*k);x.beginPath();x.arc(ax+p[0][0]*aw,ay+p[0][1]*ah,3,0,6.3);x.fill();
+        if(q>=1){var pulse=(u*1.4+i*.3)%1;
+          x.beginPath();x.arc(end[0],end[1],6,0,6.3);x.fillStyle=gl(A*k);x.fill();
+          x.beginPath();x.arc(end[0],end[1],7+pulse*12,0,6.3);x.strokeStyle=gl((1-pulse)*.5*A*k);x.stroke()}
+        else if(end){x.beginPath();x.arc(end[0],end[1],4,0,6.3);x.fillStyle=gl(.9*A*k);x.fill()}
+      }
     }
   };
   $$('canvas.tape').forEach(function(c){
@@ -152,7 +160,7 @@
   // scroll reveal
   if('IntersectionObserver' in window&&!rm){
     var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
-    $$('.pg .head,.card,.g,.step,.calc,.rev,.ba,details,form').forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+    $$('.pg .head,.sub .head,.card,.g,.step,.calc,.rev,.ba,.wkc,.tbl,details,form').forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
   }
 
   // gallery
